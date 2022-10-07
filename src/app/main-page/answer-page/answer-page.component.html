@@ -50,12 +50,45 @@
 </mat-form-field>
 
 
+<div class="container">  
+   
+  
+<form  (ngSubmit)="onSubmit()">  
 
+  
+  <table class="" formArrayName="quantities">  
+    <tr>  
+      <th colspan="2">Champs du formulaire :</th>  
+      <th><button mat-button mat-mini-fab color="primary" type="button" (click)="addQuantity()"><mat-icon >add
+    </mat-icon></button></th>  
+    </tr>  
+    <tr *ngFor="let quantity of quantities().controls; let i=index" >  
+      <td>  
+          Quantity :  
+          <input mat-input type="text" formControlName="qty" class="form-control">  
+      </td>  
+      <td>  
+          Price:  
+          <input mat-input type="text" formControlName="price" class="form-control">  
+      </td>  
+      <td>  
+          <button mat-button mat-mini-fab color="warn" type="button" (click)="removeQuantity(i)" class=" btn-danger"><mat-icon >delete
+        </mat-icon></button>  
+      </td>  
+    </tr>  
+  </table>  
+   
+    
+</form>  
+    
+<br/>  
+{{this.productForm.value | json}}  
+</div>
 
 
 
 <input
-          type="button"
+          type="submit"
           mat-input
           value="Créer"
           
