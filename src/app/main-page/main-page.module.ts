@@ -8,13 +8,15 @@ import { RouterModule } from '@angular/router';
 import { AnswerPageComponent } from './answer-page/answer-page.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
+
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     MaterialExampleModule,
     RouterModule,
-    NgxMaterialTimepickerModule
+    NgxMaterialTimepickerModule,
+    
     //AppModule
   ],
   declarations: [MainPageComponent, AnswerPageComponent],

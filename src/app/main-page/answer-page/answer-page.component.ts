@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Sort} from '@angular/material/sort';
 import { environment } from '../../../environments/environment';
+import { FormGroup, FormControl, FormArray, FormBuilder } from '@angular/forms';
+
 
 export interface Analysis {
   calories: number;
@@ -26,7 +28,10 @@ export interface Analysis2 {
   styleUrls: ['./answer-page.component.css']
 })
 export class AnswerPageComponent implements OnInit {
-  
+  name2 = 'Angular';  
+    
+  productForm: FormGroup;  
+
   app = environment.application
   user : any;
   mongo : any;
@@ -37,7 +42,7 @@ export class AnswerPageComponent implements OnInit {
 
 sortedData: Analysis2[];
 
-constructor() {
+constructor(private fb:FormBuilder) {
   this.user = this.app.allUsers[sessionStorage.getItem("userId")]
     
   this.mongo =this.user.mongoClient('Cluster0');
@@ -48,8 +53,36 @@ constructor() {
        //console.log(this.analysis)
   this.sortedData = this.analysis.slice();
     })
+
+    this.productForm = this.fb.group({  
+      name: '',  
+      quantities: this.fb.array([]) ,  
+    });  
     
 }
+
+
+quantities() : FormArray {  
+  return this.productForm.get("quantities") as FormArray  
+}  
+   
+newQuantity(): FormGroup {  
+  return this.fb.group({  
+    qty: '',  
+    price: '',  
+  })  
+}  
+   
+addQuantity() {  
+  this.quantities().push(this.newQuantity());  
+}  
+   
+removeQuantity(i:number) {  
+  this.quantities().removeAt(i);  
+}  
+   
+onSubmit() {  
+  console.log(this.productForm.value);  }
 
 sortData(sort: Sort) {
   
