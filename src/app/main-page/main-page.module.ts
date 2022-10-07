@@ -6,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { MaterialExampleModule } from '../../material/material.module';
 import { RouterModule } from '@angular/router';
 import { AnswerPageComponent } from './answer-page/answer-page.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import { AnswerPageComponent } from './answer-page/answer-page.component';
     BrowserModule,
     MaterialExampleModule,
     RouterModule,
+    NgxMaterialTimepickerModule
     //AppModule
   ],
   declarations: [MainPageComponent, AnswerPageComponent],
