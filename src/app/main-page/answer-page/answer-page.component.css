@@ -1,0 +1,11 @@
+table {
+  width: 100%;
+}
+
+.activechip {
+  background-color: green;
+}
+
+.inactivechip {
+  background-color: red;
+}
