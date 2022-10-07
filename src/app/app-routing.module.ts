@@ -18,6 +18,7 @@ import { MyProfilePageComponent } from './main-page/my-profile-page/my-profile-p
 import { AdminGuard } from './main-page/admin.guard';
 import { ConnectedUsersComponent } from './main-page/connected-users/connected-users.component';
 import { ValidTokenGuard } from './main-page/valid-token.guard';
+import { SensoryProfilesPageComponent } from './main-page/sensory-profiles-page/sensory-profiles-page.component';
 //import { RegisterFormComponent } from './register-form/register-form.component';
 
 //const routes: Routes = []; // sets up routes constant where you define your routes
@@ -57,6 +58,10 @@ const routes: Routes = [
         path: 'connected-users', // child route path
         canActivate: [AdminGuard],
         component: ConnectedUsersComponent, // child route component that the router renders
+      }, {
+        path: 'sensory-profiles', // child route path
+        canActivate: [AdminGuard],
+        component: SensoryProfilesPageComponent, // child route component that the router renders
       },
       {
         path: 'settings',
