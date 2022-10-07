@@ -33,12 +33,12 @@
 <br>
 
 
-<form>
+<form  (ngSubmit)="onSubmit()">  
 <mat-card class="fo">
   
-<mat-form-field appearance="fill">
+<mat-form-field class="title_input" appearance="fill">
 <mat-label>Nom de l'analyse</mat-label>
-    <input matInput >
+    <input matInput  >
 </mat-form-field>
 
 <mat-form-field appearance="fill">
@@ -53,7 +53,7 @@
 <div class="container">  
    
   
-<form  (ngSubmit)="onSubmit()">  
+
 
   
   <table class="" formArrayName="quantities">  
@@ -63,8 +63,11 @@
     </mat-icon></button></th>  
     </tr>  
     <tr *ngFor="let quantity of quantities().controls; let i=index" >  
-      <td>  
-          Quantity :  
+      <mat-card>
+        <tr> Nom du champ :
+        <input mat-input type="text" formControlName="qty" class="form-control w-100"> </tr>
+        <td>  
+          Type :  
           <input mat-input type="text" formControlName="qty" class="form-control">  
       </td>  
       <td>  
@@ -72,17 +75,23 @@
           <input mat-input type="text" formControlName="price" class="form-control">  
       </td>  
       <td>  
+      Price:  
+      <input mat-input type="text" formControlName="price" class="form-control">  
+  </td> 
+      <td>  
           <button mat-button mat-mini-fab color="warn" type="button" (click)="removeQuantity(i)" class=" btn-danger"><mat-icon >delete
         </mat-icon></button>  
-      </td>  
+      </td> 
+    </mat-card>
+    <br> 
     </tr>  
   </table>  
    
     
-</form>  
+ 
     
 <br/>  
-{{this.productForm.value | json}}  
+ {{this.productForm.value | json}}
 </div>
 
 
