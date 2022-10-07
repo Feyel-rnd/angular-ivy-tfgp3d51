@@ -50,7 +50,7 @@ constructor() {
   this.mongo =this.user.mongoClient('Cluster0');
   this.collection = this.mongo.db('Data').collection("Analyses");
   this.collection.find({}).then((value)=>{
-       console.log(value)
+       //console.log(value)
        this.analysis = value
        //console.log(this.analysis)
   this.sortedData = this.analysis.slice();

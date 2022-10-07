@@ -32,8 +32,20 @@
 </table>
 <br>
 <mat-card>
-<div class="24hr-example">
-<input placeholder="24hr format" aria-label="24hr format" [ngxTimepicker]="fullTime" [format]="24"  readonly>
-<ngx-material-timepicker #fullTime></ngx-material-timepicker>
-</div>
+<mat-form-field appearance="fill">
+<mat-label>Valide à partir de</mat-label>
+<input matInput [matDatepicker]="from">
+<mat-hint>JJ/MM/AAAA</mat-hint>
+<mat-datepicker-toggle matSuffix [for]="from"></mat-datepicker-toggle>
+<mat-datepicker #from></mat-datepicker>
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+<mat-label>Jusqu'à</mat-label>
+<input matInput [matDatepicker]="to">
+<mat-hint>JJ/MM/AAAA</mat-hint>
+<mat-datepicker-toggle matSuffix [for]="to"></mat-datepicker-toggle>
+<mat-datepicker #to></mat-datepicker>
+</mat-form-field>
 </mat-card>
