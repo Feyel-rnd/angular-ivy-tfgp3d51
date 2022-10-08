@@ -7,6 +7,10 @@ import { MaterialExampleModule } from '../../material/material.module';
 import { RouterModule } from '@angular/router';
 import { AnswerPageComponent } from './answer-page/answer-page.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import { CreateAnalysisPageComponent } from './create-analysis-page/create-analysis-page.component';
+import { MySensoryProfilePageComponent } from './my-sensory-profile-page/my-sensory-profile-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { ConnectedUsersComponent } from './connected-users/connected-users.component';
 
 
 @NgModule({
@@ -19,7 +23,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
     
     //AppModule
   ],
-  declarations: [MainPageComponent, AnswerPageComponent],
+  declarations: [MainPageComponent, AnswerPageComponent,CreateAnalysisPageComponent,MySensoryProfilePageComponent,HomePageComponent,ConnectedUsersComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class MainPageModule {}
